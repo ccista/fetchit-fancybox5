@@ -1,0 +1,26 @@
+<div id="order-modal" class="price-modal" style="display: none;" data-selectable>		  
+	<h3 class="price-modal__title text-center">Узнайте стоимость</h3>
+    <p class="price-modal__subtitle">
+	    Технолог перезвонит Вам в течение 30 минут.<br>
+	    Рабочее время ежедневно с 9:00-18:00 по МСК.
+	</p>
+	[[!FetchIt?
+        &snippet=`FormIt`
+        &form=`modalForm_tpl`
+        &hooks=`rcv3,email`
+        &emailTpl=`emailTpl`
+        &emailSubject=`Письмо с сайта [[++site_url]]`
+        &emailTo=`[[#2.emailTo]]`
+        &validate=`name:required,phone:required`
+        &validationErrorMessage=`В форме содержатся ошибки!`
+        &successMessage=`Сообщение успешно отправлено`
+        &rcv3Action = `modalform`
+    ]]
+</div>
+
+<div id="thank-modal" class="price-modal" style="display: none;" data-selectable>		  
+	<h3 class="price-modal__title text-center">Спасибо</h3>
+    <p class="price-modal__subtitle">
+	    Ваш запрос успешно отправлен. Технолог перезвонит Вам с персональным решением.
+	</p>
+</div>
